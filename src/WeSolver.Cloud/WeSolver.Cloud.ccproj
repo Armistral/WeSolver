@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>1.3.0</ProductVersion>
-    <ProjectGuid>{bf84f5b3-945e-456b-b28a-3231cd163823}</ProjectGuid>
+    <ProjectGuid>{335130ab-b1ff-47a6-8b33-12bd6651354b}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WeSolver.Cloud</RootNamespace>
@@ -37,7 +37,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WeSolver.WebHost\WeSolver.WebHost.csproj">
       <Name>WeSolver.WebHost</Name>
-      <Project>{445d0f82-2ba3-4a0a-97d1-68c27676b059}</Project>
+      <Project>{28fac31d-9d4f-49ce-b2f7-4f465f3d86d1}</Project>
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <RoleName>WeSolver.WebHost</RoleName>
