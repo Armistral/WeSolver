@@ -5,6 +5,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeSolver.WebHost", "WeSolve
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "WeSolver.Cloud", "WeSolver.Cloud\WeSolver.Cloud.ccproj", "{335130AB-B1FF-47A6-8B33-12BD6651354B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Registration", "Registration", "{76CF744F-8402-4FE8-8D7B-2F7B32C5823A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeSolver.Facebook", "WeSolver.Facebook\WeSolver.Facebook.csproj", "{48BA19A4-3EB1-479C-9369-739726E3F50A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeSolver.Registration", "WeSolver.Registration\WeSolver.Registration.csproj", "{91C8F4B5-833E-45E5-9D57-917F9E228098}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,8 +25,20 @@ Global
 		{335130AB-B1FF-47A6-8B33-12BD6651354B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{335130AB-B1FF-47A6-8B33-12BD6651354B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{335130AB-B1FF-47A6-8B33-12BD6651354B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48BA19A4-3EB1-479C-9369-739726E3F50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BA19A4-3EB1-479C-9369-739726E3F50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BA19A4-3EB1-479C-9369-739726E3F50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BA19A4-3EB1-479C-9369-739726E3F50A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C8F4B5-833E-45E5-9D57-917F9E228098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C8F4B5-833E-45E5-9D57-917F9E228098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C8F4B5-833E-45E5-9D57-917F9E228098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C8F4B5-833E-45E5-9D57-917F9E228098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48BA19A4-3EB1-479C-9369-739726E3F50A} = {76CF744F-8402-4FE8-8D7B-2F7B32C5823A}
+		{91C8F4B5-833E-45E5-9D57-917F9E228098} = {76CF744F-8402-4FE8-8D7B-2F7B32C5823A}
 	EndGlobalSection
 EndGlobal
