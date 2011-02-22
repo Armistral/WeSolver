@@ -1,0 +1,19 @@
+﻿@model WeSolver.WebHost.Models.Problem
+
+<h1>@Model.Title</h1>
+
+@Model.Detail
+
+@if (Model.Solutions != null && Model.Solutions.Items != null && Model.Solutions.Items.Count() > 0)
+{
+    <h2>Solutions</h2>
+    <ol>
+        @foreach (var solution in Model.Solutions.Items)
+        {
+            <li>
+                <h3>@solution.Title</h3>
+                @solution.Detail
+            </li>
+        }
+    </ol>
+}
