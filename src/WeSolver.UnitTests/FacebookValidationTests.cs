@@ -23,5 +23,18 @@ namespace WeSolver.UnitTests
             Assert.That(facebookValidation.TryValidate(settings, SignedRequest, out signedUser),"signed request was not decoded correctly");
 
         }
+
+        [Test]
+        public void InValidSignedRequest()
+        {
+            var settings = new FacebookSettings { AppSecret = "shhhhhh" };
+
+            var facebookValidation = new ValidateRegistration();
+
+            ISignedUser signedUser;
+
+            Assert.That(!facebookValidation.TryValidate(settings, SignedRequest, out signedUser), "signed request should have failed");
+
+        }
     }
 }
