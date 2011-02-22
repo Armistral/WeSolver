@@ -9,6 +9,6 @@ namespace WeSolver.Registration
     {
         string UserId { get; set; }
 
-        DateTime IssuedAtUtc { get; set; }
+        DateTime? IssuedAtUtc { get; set; }
     }
 }

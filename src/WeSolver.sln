@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeSolver.Facebook", "WeSolv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeSolver.Registration", "WeSolver.Registration\WeSolver.Registration.csproj", "{91C8F4B5-833E-45E5-9D57-917F9E228098}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{ED92C1D1-4A22-4FFF-819E-8833BAAC4698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeSolver.UnitTests", "WeSolver.UnitTests\WeSolver.UnitTests.csproj", "{C0B03DEC-8DEC-4AF3-B9E9-F58E4C207CE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{91C8F4B5-833E-45E5-9D57-917F9E228098}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91C8F4B5-833E-45E5-9D57-917F9E228098}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91C8F4B5-833E-45E5-9D57-917F9E228098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B03DEC-8DEC-4AF3-B9E9-F58E4C207CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B03DEC-8DEC-4AF3-B9E9-F58E4C207CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B03DEC-8DEC-4AF3-B9E9-F58E4C207CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B03DEC-8DEC-4AF3-B9E9-F58E4C207CE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,5 +48,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{48BA19A4-3EB1-479C-9369-739726E3F50A} = {76CF744F-8402-4FE8-8D7B-2F7B32C5823A}
 		{91C8F4B5-833E-45E5-9D57-917F9E228098} = {76CF744F-8402-4FE8-8D7B-2F7B32C5823A}
+		{C0B03DEC-8DEC-4AF3-B9E9-F58E4C207CE0} = {ED92C1D1-4A22-4FFF-819E-8833BAAC4698}
 	EndGlobalSection
 EndGlobal

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{48BA19A4-3EB1-479C-9369-739726E3F50A}</ProjectGuid>
+    <ProjectGuid>{C0B03DEC-8DEC-4AF3-B9E9-F58E4C207CE0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeSolver.Facebook</RootNamespace>
-    <AssemblyName>WeSolver.Facebook</AssemblyName>
+    <RootNamespace>WeSolver.UnitTests</RootNamespace>
+    <AssemblyName>WeSolver.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,9 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.5.9.10348\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\packages\NUnit.2.5.9.10348\lib\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\packages\NUnit.2.5.9.10348\lib\pnunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,13 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FacebookSettings.cs" />
-    <Compile Include="FacebookSignedUser.cs" />
-    <Compile Include="FacebookUtils.cs" />
+    <Compile Include="FacebookValidationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidateRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeSolver.Facebook\WeSolver.Facebook.csproj">
+      <Project>{48BA19A4-3EB1-479C-9369-739726E3F50A}</Project>
+      <Name>WeSolver.Facebook</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeSolver.Registration\WeSolver.Registration.csproj">
       <Project>{91C8F4B5-833E-45E5-9D57-917F9E228098}</Project>
       <Name>WeSolver.Registration</Name>
