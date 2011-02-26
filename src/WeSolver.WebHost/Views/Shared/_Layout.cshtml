@@ -8,10 +8,25 @@
 
 <body>
 
-<div>
-  @Html.Partial("_SignInSignUp")
-</div>
+    <header>
+        <h1>WeSolver</h1>
+        
+        <div>
+          @Html.Partial("_SignInSignUp")
+        </div>
+    </header>
 
     @RenderBody()
+
+    @if (!Convert.ToBoolean(ViewBag.CancelSidebar)) {
+        <aside>
+            @RenderSection("sidebar", required: false)
+        </aside>
+    }
+
+    <footer>
+        &copy; @DateTime.UtcNow.Year WeSolver etc etc
+    </footer>
+
 </body>
 </html>
