@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 using System.Web.Mvc;
+using WeSolver.Data;
+using WeSolver.Facebook;
+using WeSolver.Registration;
 
 namespace WeSolver.WebHost.Controllers
 {
     public class RegistrationController : Controller
     {
-        //
-        // GET: /Registration/
-
         public ActionResult Index()
         {
             return View();
@@ -18,13 +15,23 @@ namespace WeSolver.WebHost.Controllers
 
         public ActionResult Login()
         {
+            SignedUser signedUser = null;
+
             if (Request["signed_request"] != null)
             {
                 var signedRequest = Request["signed_request"];
+                var facebookValidation = new ValidateRegistration();
+                var settings = (FacebookSettings)ConfigurationManager.GetSection("facebookSettings");
+                signedUser = facebookValidation.TryValidate(settings, signedRequest);
             }
 
-            //TODO verify signed_request parameter from facebook
-            //TODO if valid setup user account in our DB using UID and email
+            if (signedUser != null)
+            {
+                var user = new WeSolverUser { FacebookUid = signedUser.UserId, Email = signedUser.Email };
+                var ds = new WeSolverDataSource();
+                ds.AddUser(user);
+                System.Diagnostics.Trace.TraceInformation("Added user {0}-{1} in table storage for user '{2}'", user.PartitionKey, user.RowKey, user.FacebookUid);
+            }
 
             return RedirectToAction("index", "home");
         }
