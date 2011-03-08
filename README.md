@@ -7,4 +7,4 @@ platform.
 
 Links
 -----
-* [Blog](http://quicksolver.blogspot.com/)
+* [Blog](http://wesolver.blogspot.com/)
