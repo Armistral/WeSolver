@@ -16,18 +16,18 @@ namespace WeSolver.Facebook
         /// </summary>
         /// <param name="settings">Facebook app settings</param>
         /// <param name="providerSignedRequest">Facebook signed request sent after registration</param>
-        /// <param name="signedUser">User Data</param>
         /// <returns>bool</returns>
-        public bool TryValidate(IRegistrationSettings settings, string providerSignedRequest, out ISignedUser signedUser)
+        public SignedUser TryValidate(IRegistrationSettings settings, string providerSignedRequest)
         {
+            //TODO registration should be done using HTTPS
 
-            signedUser = new FacebookSignedUser();
+            SignedUser signedUser = null;
 
             var signedParts = providerSignedRequest.Split('.');
 
             if (signedParts.Count() != 2)
             {
-                return false;
+                return signedUser;
             }
 
             var payload = Encoding.UTF8.GetString(FacebookUtils.Base64UrlDecode(signedParts[1]));
@@ -36,14 +36,14 @@ namespace WeSolver.Facebook
 
             if (data == null || !data.ContainsKey("algorithm"))
             {
-                return false;
+                return signedUser;
             }
 
             var algorithm = (string)data["algorithm"];
 
             if (string.IsNullOrEmpty(algorithm) || algorithm.ToUpper() != "HMAC-SHA256")
             {
-                return false; // TODO: log unsupported algorithm
+                return signedUser; // TODO: log unsupported algorithm
             }
 
             var expectedSigBytes = FacebookUtils.HashHmac(Encoding.UTF8.GetBytes(signedParts[1]), Encoding.UTF8.GetBytes(settings.AppSecret));
@@ -54,13 +54,15 @@ namespace WeSolver.Facebook
 
             if (sig != expectedSig)
             {
-                return false;//TODO log these
+                return signedUser;//TODO log these
             }
 
-            signedUser.UserId = data.ContainsKey("user_id") ? (string)data["user_id"] : null;
-            signedUser.IssuedAtUtc = data.ContainsKey("issued_at") ? (DateTime?) FacebookUtils.ParseUnixTime((long)data["issued_at"]): null;
+            signedUser = new SignedUser();
 
-            return true;
+            signedUser.UserId = data.ContainsKey("user_id") ? (string)data["user_id"] : null;
+            signedUser.IssuedAtUtc = data.ContainsKey("issued_at") ? FacebookUtils.ParseUnixTime((int)data["issued_at"]): DateTime.Now;
+
+            return signedUser;
         }
     }
 }

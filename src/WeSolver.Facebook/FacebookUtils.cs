@@ -33,7 +33,7 @@ namespace WeSolver.Facebook
 
 
 
-        public static DateTime ParseUnixTime(long unixTime)
+        public static DateTime ParseUnixTime(int unixTime)
         {
             return Epoch.AddSeconds(unixTime);
         }

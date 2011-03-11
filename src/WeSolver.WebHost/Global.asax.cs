@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.WindowsAzure;
+using Microsoft.WindowsAzure.ServiceRuntime;
 
 namespace WeSolver.WebHost
 {
@@ -35,6 +37,12 @@ namespace WeSolver.WebHost
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            CloudStorageAccount.SetConfigurationSettingPublisher((configName, configSetter) =>
+            {
+                configSetter(RoleEnvironment.GetConfigurationSettingValue(configName));
+            });
+
         }
     }
 }
