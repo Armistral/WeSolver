@@ -32,7 +32,7 @@ namespace WeSolver.Data
                 return null;
             }
 
-            return _context.WeSolverUser.FirstOrDefault(user => user.FacebookUid == facebookUid);
+            return _context.WeSolverUser.Where(user => user.FacebookUid == facebookUid).ToList().FirstOrDefault();
         }
 
         public void AddUser(WeSolverUser user)
