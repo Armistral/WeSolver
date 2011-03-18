@@ -91,6 +91,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\NavItem.cs" />
     <Compile Include="Models\Problem.cs" />
     <Compile Include="Models\Solution.cs" />
     <Compile Include="Models\Subset.cs" />
@@ -156,6 +157,9 @@
       <Project>{91C8F4B5-833E-45E5-9D57-917F9E228098}</Project>
       <Name>WeSolver.Registration</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Navigation.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
